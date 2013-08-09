@@ -1,0 +1,68 @@
+=============================================
+Constants (config/env/{environment}.php)
+
+define('WP_HOME', 'http://project.me');
+define('WP_SITEURL', WP_HOME . '/site/');
+
+define('WP_CONTENT_DIR', APP_ROOT . '/public/content');
+define('WP_CONTENT_URL', WP_HOME . '/content');
+
+define('ABSPATH', APP_ROOT . '/public/site/');
+
+define('WP_DEBUG', true);
+
+
+=============================================
+wp-config.php
+
+<?php
+
+require dirname(__DIR__) . '/config/wordpress.php';
+
+
+=============================================
+WordPress config file (config/wordpress.php)
+
+define('APP_ROOT', dirname(__DIR__));
+define('APP_ENV', getenv('APPLICATION_ENV'));
+
+/** Require environment-specific configuration */
+if (file_exists(APP_ROOT . '/config/env/local.php')) {
+    require APP_ROOT . '/config/env/local.php';
+} else {
+    require APP_ROOT . '/config/env/' . APP_ENV . '.php';
+}
+
+
+
+=============================================
+.gitignore
+
+config/env/local.php
+config/env/*local.php
+
+
+
+=============================================
+Default Theme
+
+    - index.php
+
+This is a default theme.
+
+<?php //echo $parse_error
+
+
+    - style.css
+
+/**
+ * Theme Name: Default
+ */
+
+
+
+=============================================
+Add to config/env/local.php
+
+# Add this line to verify
+// echo "This is the local config.<br><br>";

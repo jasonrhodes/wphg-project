@@ -1,0 +1,25 @@
+After switching to .bashrc, this is what goes in as the alias
+
+alias wpinstall=
+
+wget http://wordpress.org/latest.tar.gz && tar xfz latest.tar.gz && mv wordpress/* . && rm latest.tar.gz && rm -rf wordpress
+
+
+
+
+echo "===================================================="
+echo "A robot is now installing WordPress for you."
+echo "(Too lazy to click on a couple links, huh?)"
+echo "===================================================="
+echo ""
+
+
+echo "===================================================="
+echo "Oh yay, WordPress is installed. I'm thrilled."
+echo "===================================================="
+echo ""
+
+
+# TODO:
+# - Create database and user with correct permissions?
+# - Open editor to wp-config.php file for setup?
